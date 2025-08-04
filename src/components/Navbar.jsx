@@ -3,7 +3,7 @@ import {
   Menu, X, Home, Building2, Banknote, Calculator, ClipboardList,
   FolderKanban, Phone, ArrowRight
 } from 'lucide-react';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/Logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
