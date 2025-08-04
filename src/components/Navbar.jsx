@@ -4,6 +4,8 @@ import {
   FolderKanban, Phone, ArrowRight
 } from 'lucide-react';
 import Logo from '../assets/Logo.png';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,14 +35,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex flex-1 justify-center space-x-6">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="flex items-center gap-1 text-[#7D7D7D] hover:text-blue-600 transition font-medium text-sm"
               >
                 {item.icon}
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -70,7 +72,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden bg-white px-4 py-4 space-y-4 shadow-lg transition-all">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
@@ -78,7 +80,7 @@ const Navbar = () => {
             >
               {item.icon}
               {item.name}
-            </a>
+            </Link>
           ))}
           <a
             href="#get-started"
