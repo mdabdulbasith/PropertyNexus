@@ -37,7 +37,7 @@ const Navbar = () => {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="flex items-center gap-1 text-[#7D7D7D] hover:text-blue-600 transition font-medium text-sm"
               >
                 {item.icon}
@@ -74,7 +74,7 @@ const Navbar = () => {
           {navigation.map((item) => (
             <Link
               key={item.name}
-              href={item.href}
+              to={item.href}
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium text-base transition"
             >
