@@ -143,40 +143,40 @@ const Projects = () => {
             <div className="w-full mt-20">
                 {/* Hero */}
                 <section
-                    className="w-full flex items-center justify-center"
+                    className="w-full flex items-center justify-center px-4"
                     style={{
                         background: "linear-gradient(135.49deg, #0D4883 28.08%, #1B6EC1 79.66%)",
                         height: 304,
                         minHeight: 220,
                     }}
                 >
-                    <div className="text-center px-4">
-                        <h1 className="text-white font-poppins font-semibold text-[56px] leading-[84px] max-w-[346px] mx-auto">
+                    <div className="text-center">
+                        <h1 className="text-white font-poppins font-semibold text-3xl md:text-[56px] leading-tight md:leading-[84px] max-w-[346px] md:max-w-[640px] mx-auto">
                             Our Projects
                         </h1>
-                        <p className="mt-4 text-white opacity-90 font-poppins text-[16px] max-w-[533px] mx-auto">
+                        <p className="mt-4 text-white opacity-90 font-poppins text-sm md:text-base max-w-[533px] mx-auto">
                             Explore our comprehensive portfolio of innovative solutions in real estate, finance, and technology.
                         </p>
                     </div>
                 </section>
 
                 {/* Portfolio */}
-                <section className="w-full px-5 py-16 bg-white flex flex-col items-center">
+                <section className="w-full px-4 md:px-5 py-16 bg-white flex flex-col items-center">
                     <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
-                        <h2 className="text-black font-poppins font-medium text-[40px] leading-[68px] text-center max-w-[315px] mx-auto">
+                        <h2 className="text-black font-poppins font-medium text-3xl md:text-[40px] leading-[48px] md:leading-[68px] text-center max-w-[315px] mx-auto">
                             Project Portfolio
                         </h2>
-                        <p className="text-black font-poppins text-[16px] mt-1 mb-8 text-center max-w-[395px] mx-auto">
+                        <p className="text-black font-poppins text-sm md:text-base mt-1 mb-8 text-center max-w-[395px] mx-auto">
                             Cutting-edge solutions across multiple industries
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[1440px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                             {projectData.map((p) => (
                                 <div
                                     key={p.title}
                                     className="border border-[#0A4076] rounded-[16px] p-5 shadow hover:shadow-lg flex flex-col"
-                                    style={{ height: 431, gap: 20 }}
+                                    style={{ gap: 20 }}
                                 >
-                                    <div className="flex justify-between items-center mb-1">
+                                    <div className="flex justify-between items-center mb-1 flex-wrap gap-y-2">
                                         <span className="text-[#0A4076] font-semibold text-lg">{p.title}</span>
                                         <span
                                             className="text-xs font-semibold border px-3 py-1 rounded-full"
@@ -189,11 +189,11 @@ const Projects = () => {
                                             {p.status}
                                         </span>
                                     </div>
-                                    <p className="text-[#777777] text-[14px]">{p.description}</p>
-                                    <div className="flex gap-7">
+                                    <p className="text-[#777777] text-sm">{p.description}</p>
+                                    <div className="flex flex-col sm:flex-row gap-6">
                                         <div>
                                             <div className="text-[#0A4076] font-semibold mb-1">Key Features</div>
-                                            <ul className="list-disc pl-5 text-black text-[14px]">
+                                            <ul className="list-disc pl-5 text-black text-sm">
                                                 {p.features.map((f, i) => (
                                                     <li key={i}>{f}</li>
                                                 ))}
@@ -201,28 +201,28 @@ const Projects = () => {
                                         </div>
                                         <div>
                                             <div className="text-[#0A4076] font-semibold mb-1">Technologies</div>
-                                            <ul className="list-disc pl-5 text-[#454545] text-[14px] marker:text-[#0A4076]">
+                                            <ul className="list-disc pl-5 text-[#454545] text-sm marker:text-[#0A4076]">
                                                 {p.technologies.map((t, i) => (
                                                     <li key={i}>{t}</li>
                                                 ))}
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex justify-between items-center mt-auto mb-5">
+                                    <div className="flex flex-wrap justify-between items-center mt-4 mb-5 gap-y-3">
                                         {p.metrics.map((met, i) => (
-                                            <div key={i} className="flex flex-col items-center">
+                                            <div key={i} className="flex flex-col items-center text-center min-w-[100px]">
                                                 <span className="text-[#2A2A2A] font-bold text-[18px]">{met.value}</span>
                                                 <span className="text-[#777777] text-sm">{met.label}</span>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="flex justify-end gap-2 mt-auto">
+                                    <div className="flex flex-col sm:flex-row justify-end gap-2 mt-auto">
                                         {p.buttons.map((b, i) => (
                                             <button
                                                 key={i}
-                                                className={`px-5 py-2 text-[15px] font-semibold rounded-md border ${i === 1
-                                                    ? "text-white border-none"
-                                                    : "border-[#0A4076] text-[#0A4076] bg-white hover:bg-[#f5fafd]"
+                                                className={`px-5 py-2 text-sm font-semibold rounded-md border ${i === 1
+                                                        ? "text-white border-none"
+                                                        : "border-[#0A4076] text-[#0A4076] bg-white hover:bg-[#f5fafd]"
                                                     }`}
                                                 style={
                                                     i === 1
@@ -244,22 +244,24 @@ const Projects = () => {
 
                 {/* Impact */}
                 <section
-                    className="w-full flex flex-col items-center justify-center"
+                    className="w-full flex flex-col items-center justify-center px-4 text-center py-12"
                     style={{
                         background: "linear-gradient(135.49deg, #0D4883 28.08%, #1B6EC1 79.66%)",
-                        height: 344,
-                        paddingTop: 48,
-                        paddingBottom: 48,
                     }}
                 >
-                    <h2 className="text-white text-[40px] font-poppins font-semibold">Project Impact</h2>
-                    <p className="text-white opacity-90 text-[16px] mt-1 text-center max-w-[400px]">
+                    <h2 className="text-white text-3xl md:text-[40px] font-poppins font-semibold">
+                        Project Impact
+                    </h2>
+                    <p className="text-white opacity-90 text-sm md:text-base mt-1 max-w-[400px]">
                         Measurable results across our project portfolio
                     </p>
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-10 mt-10 px-6 max-w-[1440px]">
+                    <div className="flex flex-wrap justify-center gap-10 mt-10 w-full max-w-5xl">
                         {impactMetrics.map((m, i) => (
                             <div key={i} className="flex flex-col items-center text-center min-w-[120px]">
-                                <div className="mb-3 bg-[#EEBD2B] rounded-full flex items-center justify-center" style={{ width: 56, height: 56 }}>
+                                <div
+                                    className="mb-3 bg-[#EEBD2B] rounded-full flex items-center justify-center"
+                                    style={{ width: 56, height: 56 }}
+                                >
                                     {m.icon}
                                 </div>
                                 <div className="text-white text-[24px] font-semibold mb-1">{m.value}</div>
@@ -270,25 +272,24 @@ const Projects = () => {
                 </section>
 
                 {/* CTA */}
-                <section className="w-full min-h-[318px] flex items-center justify-center bg-white">
-                    <div className="text-center">
-                        <h2 className="text-black text-[48px] font-poppins font-medium leading-[68px] mb-2" style={{ width: 661 }}>
-                            Interested in Our Solutions?
-                        </h2>
-                        <p className="text-black text-base font-normal max-w-[527px] mx-auto mb-8">
-                            Learn more about how our innovative projects can benefit your business or explore partnership opportunities.
-                        </p>
-                        <div className="flex gap-3 flex-col sm:flex-row justify-center">
-                            <button className="w-[180px] h-[48px] rounded-[12px] px-5 py-3 bg-[#0A4076] text-white font-poppins font-semibold hover:brightness-110">
-                                Schedule Demo
-                            </button>
-                            <button className="w-[200px] h-[48px] rounded-[12px] px-5 py-3 border border-[#0A4076] bg-white text-[#0A4076] font-poppins font-semibold hover:bg-blue-50">
-                                Partnership Inquiry
-                            </button>
-                        </div>
+                <section className="w-full px-4 py-12 bg-white flex flex-col items-center justify-center text-center">
+                    <h2 className="text-black text-3xl md:text-[48px] font-poppins font-medium leading-tight md:leading-[68px] max-w-[661px] mx-auto mb-3">
+                        Interested in Our Solutions?
+                    </h2>
+                    <p className="text-black text-base font-normal max-w-[527px] mb-8">
+                        Learn more about how our innovative projects can benefit your business or explore partnership opportunities.
+                    </p>
+                    <div className="flex gap-3 flex-col sm:flex-row justify-center">
+                        <button className="w-full sm:w-[180px] h-[48px] rounded-[12px] px-5 py-3 bg-[#0A4076] text-white font-poppins font-semibold hover:brightness-110">
+                            Schedule Demo
+                        </button>
+                        <button className="w-full sm:w-[200px] h-[48px] rounded-[12px] px-5 py-3 border border-[#0A4076] bg-white text-[#0A4076] font-poppins font-semibold hover:bg-blue-50">
+                            Partnership Inquiry
+                        </button>
                     </div>
                 </section>
             </div>
+
             <Footer />
         </>
     );
