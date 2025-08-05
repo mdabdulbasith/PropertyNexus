@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import {
   Menu, X, Home, Building2, Banknote, Calculator, ClipboardList,
   FolderKanban, Phone, ArrowRight
@@ -9,6 +11,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false); // if you're using a mobile menu toggle
+  };
+
+
 
   const navigation = [
     { name: 'Home', href: '/', icon: <Home size={16} /> },
@@ -34,16 +44,22 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex flex-1 justify-center space-x-6">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="flex items-center gap-1 text-[#7D7D7D] hover:text-blue-600 transition font-medium text-sm"
-              >
-                {item.icon}
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={handleNavClick}
+                  className={`flex items-center gap-1 pb-1 border-b-2 ${isActive ? 'text-[#0A4076] border-[#0A4076]' : 'text-[#7D7D7D] border-transparent'
+                    } hover:text-[#0A4076] transition font-medium text-sm`}
+                >
+                  {item.icon}
+                  {item.name}
+                </Link>
+              );
+            })}
+
           </nav>
 
           {/* Desktop CTA */}

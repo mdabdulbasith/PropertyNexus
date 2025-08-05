@@ -6,9 +6,10 @@ import Loans from './pages/Loans';
 import BuySell from './pages/BuySell';
 import Calculator from './pages/Calculator';
 import Apply from './pages/Apply';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 // import About from './pages/About';
 // import Services from './pages/Services';
-// import Contact from './pages/Contact';
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
           <Route path="/buy-sell" element={<BuySell />} />
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
     </Router>
   );

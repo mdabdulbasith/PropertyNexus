@@ -1,5 +1,6 @@
 import React from 'react'
 import { FileText } from "lucide-react";
+import Footer from '../components/Footer';
 
 
 const Apply = () => {
@@ -169,6 +170,7 @@ const Apply = () => {
                     ))}
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

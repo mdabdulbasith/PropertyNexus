@@ -358,7 +358,6 @@ const BuySell = () => {
               style={{
                 fontSize: 16,
                 fontWeight: 400,
-                lineHeight: "100%",
                 maxWidth: 527,
               }}
             >

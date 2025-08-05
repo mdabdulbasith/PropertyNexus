@@ -104,7 +104,7 @@ const Loans = () => {
                                 {rate}
                             </div>
 
-                            <div>
+                            <div className='pt-10'>
                                 <h3 className="text-[24px] font-semibold text-[#363636]">{title}</h3>
                                 <p className="text-[14px] text-[#777777] mb-3">{description}</p>
 
